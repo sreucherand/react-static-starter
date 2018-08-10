@@ -1,0 +1,53 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.56",
+    "@babel/preset-env": "^7.0.0-beta.56",
+    "@babel/preset-react": "^7.0.0-beta.56",
+    "autoprefixer": "^9.1.0",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^8.0.0-beta",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.3.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "fs-extra": "^7.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-fetch": "^2.2.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^3.0.0",
+    "prettier": "^1.14.2",
+    "style-loader": "^0.22.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.5",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-manifest-plugin": "^2.0.3",
+    "webpack-node-externals": "^1.7.2",
+    "workbox-webpack-plugin": "^3.4.1"
+  },
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config webpack.config.production.js --progress",
+    "eslint": "eslint src/**/*.js; exit 0",
+    "poststatic": "rm -rf bin/",
+    "prebuild": "rm -rf public/ && mkdir -p public/static",
+    "prestart": "rm -rf public/ && mkdir -p public/static",
+    "prestatic": "rm -rf bin/ && npm run build",
+    "start": "HOT=1 NODE_ENV=development webpack-dev-server --config webpack.config.development.js",
+    "static": "NODE_ENV=production webpack --config webpack.config.static.js --progress && find bin/*.js | xargs -I % node %",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  }
+}
