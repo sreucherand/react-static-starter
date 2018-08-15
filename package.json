@@ -1,4 +1,28 @@
 {
+  "name": "react-static-starter",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config webpack.config.production.js --progress",
+    "eslint": "eslint src/**/*.js; exit 0",
+    "poststatic": "rm -rf bin/",
+    "prebuild": "rm -rf public/ && mkdir -p public/static",
+    "prestart": "rm -rf public/ && mkdir -p public/static",
+    "prestatic": "rm -rf bin/ && npm run build",
+    "start": "HOT=1 NODE_ENV=development webpack-dev-server --config webpack.config.development.js",
+    "static": "NODE_ENV=production webpack --config webpack.config.static.js --progress && find bin/*.js | xargs -I % node %",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreucherand/react-static-starter.git"
+  },
+  "author": "Sylvain Reucherand <hello@sylvainreucherand.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sreucherand/react-static-starter/issues"
+  },
+  "homepage": "https://github.com/sreucherand/react-static-starter#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.56",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.56",
@@ -40,16 +64,5 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0"
-  },
-  "scripts": {
-    "build": "NODE_ENV=production webpack --config webpack.config.production.js --progress",
-    "eslint": "eslint src/**/*.js; exit 0",
-    "poststatic": "rm -rf bin/",
-    "prebuild": "rm -rf public/ && mkdir -p public/static",
-    "prestart": "rm -rf public/ && mkdir -p public/static",
-    "prestatic": "rm -rf bin/ && npm run build",
-    "start": "HOT=1 NODE_ENV=development webpack-dev-server --config webpack.config.development.js",
-    "static": "NODE_ENV=production webpack --config webpack.config.static.js --progress && find bin/*.js | xargs -I % node %",
-    "test": "echo \"Error: no test specified\" && exit 0"
   }
 }
