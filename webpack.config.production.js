@@ -29,7 +29,7 @@ module.exports = {
             },
           },
           'postcss-loader',
-          'compile-loader',
+          'compile-string-loader',
           {
             loader: 'babel-loader',
             options: {
@@ -78,9 +78,5 @@ module.exports = {
 
   resolve: {
     extensions: ['.js'],
-  },
-
-  resolveLoader: {
-    modules: ['node_modules', path.resolve(__dirname, 'src/loaders')],
   },
 };

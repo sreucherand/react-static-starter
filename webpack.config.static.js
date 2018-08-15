@@ -53,9 +53,5 @@ module.exports = {
     extensions: ['.js'],
   },
 
-  resolveLoader: {
-    modules: ['node_modules', path.resolve(__dirname, 'src/loaders')],
-  },
-
   target: 'node',
 };
