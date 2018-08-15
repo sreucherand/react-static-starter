@@ -1,3 +1,4 @@
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -74,7 +75,7 @@ module.exports = {
     publicPath: '/static/',
   },
 
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new ErrorOverlayPlugin(), new webpack.HotModuleReplacementPlugin()],
 
   resolve: {
     extensions: ['.js'],
