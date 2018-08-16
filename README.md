@@ -17,7 +17,7 @@ A starter for using React in a static environment.
 yarn
 
 # To develop
-yarn develop
+yarn start
 
 # To generate the static files
 yarn static
